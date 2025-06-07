@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .products-page {
+            padding: 4rem 0;
+        }
+        
+        .products-header {
+            margin-bottom: 2rem;
+        }
+        
+        .products-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .products-header p {
+            color: var(--color-gray-dark);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-gray-dark);
+        }
+        
+        .breadcrumb a {
+            color: var(--color-blue);
+        }
+        
+        .breadcrumb i {
+            font-size: 0.75rem;
+        }
+        
+        .filters-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-dropdown {
+            position: relative;
+        }
+        
+        .filter-dropdown select {
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius-sm);
+            background-color: var(--color-white);
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        .filter-dropdown::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        
+        .search-filter {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-filter input {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+            width: 200px;
+        }
+        
+        .search-filter button {
+            padding: 0.5rem 1rem;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: 1px solid var(--color-blue);
+            border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+        }
+        
+        .products-grid {
+            margin-bottom: 2rem;
+        }
+        
+        .no-products {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--color-gray-light);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .no-products i {
+            font-size: 3rem;
+            color: var(--color-gray);
+            margin-bottom: 1rem;
+        }
+        
+        .no-products h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--color-gray-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .pagination-item.active {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+        }
+        
+        .pagination-item:hover:not(.active) {
+            background-color: var(--color-gray);
+            color: var(--color-white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Distribuidora<span>Bebidas</span></h1>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="categories.html">Categorias</a></li>
+                    <li><a href="promotions.html">Promoções</a></li>
+                    <li><a href="about.html">Sobre Nós</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="products-page">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Início</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="categories.html">Categorias</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="current-category">Produtos</span>
+            </div>
+            
+            <div class="products-header">
+                <h1 id="category-title">Produtos</h1>
+                <p id="category-description">Confira nossa seleção de produtos de alta qualidade.</p>
+            </div>
+            
+            <div class="filters-section">
+                <div class="filter-options">
+                    <div class="filter-dropdown">
+                        <select id="sort-filter">
+                            <option value="default">Ordenar por</option>
+                            <option value="price-asc">Menor Preço</option>
+                            <option value="price-desc">Maior Preço</option>
+                            <option value="name-asc">A-Z</option>
+                            <option value="name-desc">Z-A</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-dropdown">
+                        <select id="price-filter">
+                            <option value="all">Todos os preços</option>
+                            <option value="0-20">Até R$ 20</option>
+                            <option value="20-50">R$ 20 - R$ 50</option>
+                            <option value="50-100">R$ 50 - R$ 100</option>
+                            <option value="100+">Acima de R$ 100</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-filter">
+                    <input type="text" id="product-search" placeholder="Buscar nesta categoria...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-container">
+                <!-- Os produtos serão carregados dinamicamente via JavaScript -->
+                <!-- Exemplo de estrutura de produto -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo.jpg" alt="Cerveja Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Premium</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 8,90</p>
+                        <button class="btn btn-add-cart" data-id="1">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo2.jpg" alt="Cerveja Exemplo 2">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Especial</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 12,90</p>
+                        <button class="btn btn-add-cart" data-id="2">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo3.jpg" alt="Cerveja Exemplo 3">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Artesanal</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 15,90</p>
+                        <button class="btn btn-add-cart" data-id="3">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo4.jpg" alt="Cerveja Exemplo 4">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Importada</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 18,90</p>
+                        <button class="btn btn-add-cart" data-id="4">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo5.jpg" alt="Cerveja Exemplo 5">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Pilsen</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 7,90</p>
+                        <button class="btn btn-add-cart" data-id="5">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo6.jpg" alt="Cerveja Exemplo 6">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Lager</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 9,90</p>
+                        <button class="btn btn-add-cart" data-id="6">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo7.jpg" alt="Cerveja Exemplo 7">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja IPA</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 16,90</p>
+                        <button class="btn btn-add-cart" data-id="7">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/products/cerveja-exemplo8.jpg" alt="Cerveja Exemplo 8">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Stout</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 14,90</p>
+                        <button class="btn btn-add-cart" data-id="8">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <div class="pagination-item active">1</div>
+                <div class="pagination-item">2</div>
+                <div class="pagination-item">3</div>
+                <div class="pagination-item"><i class="fas fa-ellipsis-h"></i></div>
+                <div class="pagination-item">10</div>
+                <div class="pagination-item"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Distribuidora<span>Bebidas</span></h2>
+                    <p>Sua melhor opção em bebidas e tabacaria</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="categories.html">Categorias</a></li>
+                        <li><a href="promotions.html">Promoções</a></li>
+                        <li><a href="about.html">Sobre Nós</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="products.html?category=destilados">Destilados</a></li>
+                        <li><a href="products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="products.html?category=tabacaria">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/products.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obter categoria da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            // Atualizar título e descrição da categoria
+            updateCategoryInfo(category);
+            
+            // Configurar filtros
+            setupFilters();
+            
+            // Configurar paginação
+            setupPagination();
+        });
+        
+        function updateCategoryInfo(category) {
+            const categoryTitle = document.getElementById('category-title');
+            const categoryDescription = document.getElementById('category-description');
+            const currentCategory = document.getElementById('current-category');
+            
+            if (category) {
+                // Formatar nome da categoria
+                const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ');
+                
+                // Atualizar elementos
+                categoryTitle.textContent = formattedCategory;
+                currentCategory.textContent = formattedCategory;
+                
+                // Definir descrição com base na categoria
+                switch(category) {
+                    case 'cervejas':
+                        categoryDescription.textContent = 'Explore nossa seleção de cervejas nacionais, importadas e artesanais.';
+                        break;
+                    case 'destilados':
+                        categoryDescription.textContent = 'Descubra nossa coleção premium de destilados para todos os gostos.';
+                        break;
+                    case 'vinhos':
+                        categoryDescription.textContent = 'Vinhos tintos, brancos, rosés e espumantes para todas as ocasiões.';
+                        break;
+                    case 'nao-alcoolicos':
+                        categoryDescription.textContent = 'Opções refrescantes sem álcool para toda a família.';
+                        break;
+                    case 'tabacaria':
+                        categoryDescription.textContent = 'Produtos de tabacaria e acessórios de qualidade.';
+                        break;
+                    default:
+                        categoryDescription.textContent = 'Confira nossa seleção de produtos de alta qualidade.';
+                }
+            }
+        }
+        
+        function setupFilters() {
+            const sortFilter = document.getElementById('sort-filter');
+            const priceFilter = document.getElementById('price-filter');
+            const searchInput = document.getElementById('product-search');
+            const searchBtn = document.getElementById('search-btn');
+            
+            // Evento de ordenação
+            sortFilter.addEventListener('change', function() {
+                // Implementar ordenação dos produtos
+                console.log('Ordenar por:', this.value);
+            });
+            
+            // Evento de filtro de preço
+            priceFilter.addEventListener('change', function() {
+                // Implementar filtro de preço
+                console.log('Filtrar por preço:', this.value);
+            });
+            
+            // Evento de busca
+            searchBtn.addEventListener('click', function() {
+                // Implementar busca
+                console.log('Buscar por:', searchInput.value);
+            });
+            
+            // Permitir busca ao pressionar Enter
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+        }
+        
+        function setupPagination() {
+            const paginationItems = document.querySelectorAll('.pagination-item');
+            
+            paginationItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remover classe ativa de todos os itens
+                    paginationItems.forEach(i => i.classList.remove('active'));
+                    
+                    // Adicionar classe ativa ao item clicado (exceto para ellipsis e setas)
+                    if (!this.querySelector('.fa-ellipsis-h') && !this.querySelector('.fa-chevron-right')) {
+                        this.classList.add('active');
+                    }
+                    
+                    // Implementar paginação
+                    console.log('Página:', this.textContent);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
+

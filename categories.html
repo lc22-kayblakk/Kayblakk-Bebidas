@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .categories-page {
+            padding: 4rem 0;
+        }
+        
+        .categories-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .categories-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .categories-header p {
+            color: var(--color-gray-dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-tab {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--color-gray-light);
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-tab.active {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+        }
+        
+        .filter-tab:hover:not(.active) {
+            background-color: var(--color-gray);
+            color: var(--color-white);
+        }
+        
+        .categories-grid {
+            margin-top: 2rem;
+        }
+        
+        .category-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-card h3 {
+            font-size: 1.25rem;
+        }
+        
+        .category-description {
+            text-align: center;
+            color: var(--color-gray-dark);
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Distribuidora<span>Bebidas</span></h1>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="categories.html" class="active">Categorias</a></li>
+                    <li><a href="promotions.html">Promoções</a></li>
+                    <li><a href="about.html">Sobre Nós</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="categories-page">
+        <div class="container">
+            <div class="categories-header">
+                <h1>Nossas Categorias</h1>
+                <p>Explore nossa ampla seleção de bebidas e produtos de tabacaria. Temos opções para todos os gostos e ocasiões.</p>
+            </div>
+            
+            <div class="filter-tabs">
+                <div class="filter-tab active" data-filter="all">Todas</div>
+                <div class="filter-tab" data-filter="alcoholic">Alcoólicas</div>
+                <div class="filter-tab" data-filter="non-alcoholic">Não Alcoólicas</div>
+                <div class="filter-tab" data-filter="tobacco">Tabacaria</div>
+                <div class="filter-tab" data-filter="accessories">Complementos</div>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Cervejas -->
+                <a href="products.html?category=cervejas" class="category-card" data-category="alcoholic">
+                    <div class="category-icon"><i class="fas fa-beer"></i></div>
+                    <h3>Cervejas</h3>
+                    <p class="category-description">Nacionais, importadas e artesanais</p>
+                </a>
+                
+                <!-- Destilados -->
+                <a href="products.html?category=destilados" class="category-card" data-category="alcoholic">
+                    <div class="category-icon"><i class="fas fa-glass-whiskey"></i></div>
+                    <h3>Destilados</h3>
+                    <p class="category-description">Whisky, vodka, gin, tequila e mais</p>
+                </a>
+                
+                <!-- Vinhos -->
+                <a href="products.html?category=vinhos" class="category-card" data-category="alcoholic">
+                    <div class="category-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                    <h3>Vinhos</h3>
+                    <p class="category-description">Tintos, brancos, rosés e espumantes</p>
+                </a>
+                
+                <!-- Refrigerantes -->
+                <a href="products.html?category=refrigerantes" class="category-card" data-category="non-alcoholic">
+                    <div class="category-icon"><i class="fas fa-glass-water"></i></div>
+                    <h3>Refrigerantes</h3>
+                    <p class="category-description">Diversas marcas e sabores</p>
+                </a>
+                
+                <!-- Sucos -->
+                <a href="products.html?category=sucos" class="category-card" data-category="non-alcoholic">
+                    <div class="category-icon"><i class="fas fa-blender"></i></div>
+                    <h3>Sucos</h3>
+                    <p class="category-description">Naturais e industrializados</p>
+                </a>
+                
+                <!-- Energéticos -->
+                <a href="products.html?category=energeticos" class="category-card" data-category="non-alcoholic">
+                    <div class="category-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Energéticos</h3>
+                    <p class="category-description">Para mais energia e disposição</p>
+                </a>
+                
+                <!-- Águas -->
+                <a href="products.html?category=aguas" class="category-card" data-category="non-alcoholic">
+                    <div class="category-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Águas</h3>
+                    <p class="category-description">Com e sem gás, saborizadas</p>
+                </a>
+                
+                <!-- Isotônicos -->
+                <a href="products.html?category=isotonicos" class="category-card" data-category="non-alcoholic">
+                    <div class="category-icon"><i class="fas fa-running"></i></div>
+                    <h3>Isotônicos</h3>
+                    <p class="category-description">Para hidratação e reposição</p>
+                </a>
+                
+                <!-- Cigarros -->
+                <a href="products.html?category=cigarros" class="category-card" data-category="tobacco">
+                    <div class="category-icon"><i class="fas fa-smoking"></i></div>
+                    <h3>Cigarros</h3>
+                    <p class="category-description">Nacionais e importados</p>
+                </a>
+                
+                <!-- Cigarrilhas -->
+                <a href="products.html?category=cigarrilhas" class="category-card" data-category="tobacco">
+                    <div class="category-icon"><i class="fas fa-smoking"></i></div>
+                    <h3>Cigarrilhas</h3>
+                    <p class="category-description">Diversos sabores e marcas</p>
+                </a>
+                
+                <!-- Acessórios -->
+                <a href="products.html?category=acessorios-tabacaria" class="category-card" data-category="tobacco">
+                    <div class="category-icon"><i class="fas fa-box-open"></i></div>
+                    <h3>Acessórios para Tabacaria</h3>
+                    <p class="category-description">Isqueiros, cinzeiros e mais</p>
+                </a>
+                
+                <!-- Gelo -->
+                <a href="products.html?category=gelo" class="category-card" data-category="accessories">
+                    <div class="category-icon"><i class="fas fa-ice-cube"></i></div>
+                    <h3>Gelo</h3>
+                    <p class="category-description">Em cubos e escama</p>
+                </a>
+                
+                <!-- Carvão -->
+                <a href="products.html?category=carvao" class="category-card" data-category="accessories">
+                    <div class="category-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Carvão</h3>
+                    <p class="category-description">Para churrascos e eventos</p>
+                </a>
+                
+                <!-- Aperitivos -->
+                <a href="products.html?category=aperitivos" class="category-card" data-category="accessories">
+                    <div class="category-icon"><i class="fas fa-cookie"></i></div>
+                    <h3>Aperitivos</h3>
+                    <p class="category-description">Salgadinhos, amendoim e mais</p>
+                </a>
+                
+                <!-- Copos Descartáveis -->
+                <a href="products.html?category=copos" class="category-card" data-category="accessories">
+                    <div class="category-icon"><i class="fas fa-glass-martini-alt"></i></div>
+                    <h3>Copos Descartáveis</h3>
+                    <p class="category-description">Diversos tamanhos</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Distribuidora<span>Bebidas</span></h2>
+                    <p>Sua melhor opção em bebidas e tabacaria</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Início</a></li>
+                        <li><a href="categories.html">Categorias</a></li>
+                        <li><a href="promotions.html">Promoções</a></li>
+                        <li><a href="about.html">Sobre Nós</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="products.html?category=destilados">Destilados</a></li>
+                        <li><a href="products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="products.html?category=tabacaria">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/cart.js"></script>
+    <script>
+        // Filtro de categorias
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const categoryCards = document.querySelectorAll('.category-card');
+            
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remover classe ativa de todas as abas
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Adicionar classe ativa à aba clicada
+                    this.classList.add('active');
+                    
+                    // Obter o filtro selecionado
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Mostrar/ocultar categorias com base no filtro
+                    categoryCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
