@@ -110,7 +110,7 @@ function generateWhatsAppMessage(customerInfo) {
     // Obter itens do carrinho
     const cart = window.shoppingCart || { items: [], getSubtotal: () => 0, getTotal: () => 0 };
     
-    let message = `*Novo Pedido - Distribuidora de Bebidas*\n\n`;
+    let message = `*Novo Pedido - Kayblakk Bebidas*\n\n`;
     
     // Informações do cliente
     message += `*Cliente:* ${customerInfo.name}\n`;
@@ -158,7 +158,7 @@ function sendToWhatsApp(message) {
     const encodedMessage = encodeURIComponent(message);
     
     // Número de WhatsApp da loja (substitua pelo número real)
-    const whatsappNumber = '5500123456789';
+    const whatsappNumber = '5551985914224';
     
     // Abrir WhatsApp com a mensagem
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
