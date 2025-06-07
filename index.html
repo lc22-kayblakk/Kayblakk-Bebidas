@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>Distribuidora<span>Bebidas</span></h1>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="pages/categories.html">Categorias</a></li>
+                    <li><a href="pages/promotions.html">Promoções</a></li>
+                    <li><a href="pages/about.html">Sobre Nós</a></li>
+                    <li><a href="pages/contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="pages/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h2>Bebidas para todos os momentos</h2>
+                <p>Entrega rápida e os melhores preços da região</p>
+                <a href="pages/categories.html" class="btn btn-primary">Ver Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorias em Destaque -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Categorias em Destaque</h2>
+            <div class="categories-grid">
+                <a href="pages/products.html?category=cervejas" class="category-card">
+                    <div class="category-icon"><i class="fas fa-beer"></i></div>
+                    <h3>Cervejas</h3>
+                </a>
+                <a href="pages/products.html?category=destilados" class="category-card">
+                    <div class="category-icon"><i class="fas fa-glass-whiskey"></i></div>
+                    <h3>Destilados</h3>
+                </a>
+                <a href="pages/products.html?category=vinhos" class="category-card">
+                    <div class="category-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                    <h3>Vinhos</h3>
+                </a>
+                <a href="pages/products.html?category=nao-alcoolicos" class="category-card">
+                    <div class="category-icon"><i class="fas fa-glass-water"></i></div>
+                    <h3>Não Alcoólicos</h3>
+                </a>
+                <a href="pages/products.html?category=tabacaria" class="category-card">
+                    <div class="category-icon"><i class="fas fa-smoking"></i></div>
+                    <h3>Tabacaria</h3>
+                </a>
+                <a href="pages/products.html?category=complementos" class="category-card">
+                    <div class="category-icon"><i class="fas fa-cube"></i></div>
+                    <h3>Complementos</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Populares -->
+    <section class="popular-products">
+        <div class="container">
+            <h2 class="section-title">Produtos Populares</h2>
+            <div class="products-grid" id="popular-products-container">
+                <!-- Os produtos serão carregados dinamicamente via JavaScript -->
+                <!-- Exemplo de estrutura de produto -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/cerveja-exemplo.jpg" alt="Cerveja Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cerveja Premium</h3>
+                        <p class="product-category">Cervejas</p>
+                        <p class="product-price">R$ 8,90</p>
+                        <button class="btn btn-add-cart" data-id="1">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/whisky-exemplo.jpg" alt="Whisky Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Whisky 12 Anos</h3>
+                        <p class="product-category">Destilados</p>
+                        <p class="product-price">R$ 129,90</p>
+                        <button class="btn btn-add-cart" data-id="2">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/vinho-exemplo.jpg" alt="Vinho Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Vinho Tinto Seco</h3>
+                        <p class="product-category">Vinhos</p>
+                        <p class="product-price">R$ 59,90</p>
+                        <button class="btn btn-add-cart" data-id="3">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/energetico-exemplo.jpg" alt="Energético Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Energético Premium</h3>
+                        <p class="product-category">Não Alcoólicos</p>
+                        <p class="product-price">R$ 9,90</p>
+                        <button class="btn btn-add-cart" data-id="4">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <a href="pages/products.html" class="btn btn-secondary">Ver Mais Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Empresa -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre Nossa Distribuidora</h2>
+                    <p>Somos uma distribuidora de bebidas comprometida em oferecer os melhores produtos com preços competitivos e entrega rápida. Nossa seleção inclui uma ampla variedade de bebidas alcoólicas e não alcoólicas, além de produtos de tabacaria e complementos para suas festas e eventos.</p>
+                    <p>Atendemos clientes residenciais e comerciais, sempre com o compromisso de qualidade e excelência no atendimento.</p>
+                    <a href="pages/about.html" class="btn btn-outline">Saiba Mais</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/store-front.jpg" alt="Fachada da Loja">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verificação de Idade -->
+    <div class="age-verification" id="age-verification">
+        <div class="age-verification-content">
+            <h2>Verificação de Idade</h2>
+            <p>Este site contém produtos destinados apenas para maiores de 18 anos.</p>
+            <p>Você confirma que tem idade legal para consumir bebidas alcoólicas?</p>
+            <div class="age-buttons">
+                <button class="btn btn-primary" id="confirm-age">Sim, tenho 18 anos ou mais</button>
+                <button class="btn btn-secondary" id="deny-age">Não, sou menor de 18 anos</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Distribuidora<span>Bebidas</span></h2>
+                    <p>Sua melhor opção em bebidas e tabacaria</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="pages/categories.html">Categorias</a></li>
+                        <li><a href="pages/promotions.html">Promoções</a></li>
+                        <li><a href="pages/about.html">Sobre Nós</a></li>
+                        <li><a href="pages/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="pages/products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="pages/products.html?category=destilados">Destilados</a></li>
+                        <li><a href="pages/products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="pages/products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="pages/products.html?category=tabacaria">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/age-verification.js"></script>
+</body>
+</html>
+
