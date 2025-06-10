@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/reset.css">
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .cart-page {
+            padding: 4rem 0;
+        }
+        
+        .cart-header {
+            margin-bottom: 2rem;
+        }
+        
+        .cart-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cart-header p {
+            color: var(--color-gray-dark);
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--color-gray-light);
+            border-radius: var(--border-radius-md);
+            margin-bottom: 2rem;
+        }
+        
+        .cart-empty i {
+            font-size: 4rem;
+            color: var(--color-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-empty h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cart-empty p {
+            margin-bottom: 1.5rem;
+            color: var(--color-gray-dark);
+        }
+        
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .cart-items {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-gray-light);
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .cart-item-category {
+            font-size: 0.875rem;
+            color: var(--color-gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cart-item-price {
+            font-weight: 600;
+            color: var(--color-blue-dark);
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-gray-light);
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--color-gray);
+            border-right: 1px solid var(--color-gray);
+        }
+        
+        .remove-item {
+            color: var(--color-gray-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .remove-item:hover {
+            color: #e53e3e;
+        }
+        
+        .cart-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .continue-shopping {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-blue);
+            font-weight: 500;
+        }
+        
+        .clear-cart {
+            color: #e53e3e;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .cart-summary {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .summary-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-gray-light);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-gray-light);
+        }
+        
+        .checkout-form {
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius-sm);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .checkout-btn:hover {
+            background-color: var(--color-blue-dark);
+        }
+        
+        @media (max-width: 992px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .cart-item-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/Kayblakk-Bebidas/index.html">
+                    <h1>Distribuidora<span>Bebidas</span></h1>
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="/Kayblakk-Bebidas/pages/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="cart-header">
+                <h1>Meu Carrinho</h1>
+                <p>Revise seus itens e finalize seu pedido</p>
+            </div>
+            
+            <!-- Carrinho Vazio (será exibido quando não houver itens) -->
+            <div class="cart-empty" id="cart-empty" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h2>Seu carrinho está vazio</h2>
+                <p>Adicione produtos ao seu carrinho para continuar.</p>
+                <a href="/Kayblakk-Bebidas/pages/categories.html" class="btn btn-primary">Explorar Produtos</a>
+            </div>
+            
+            <!-- Conteúdo do Carrinho (será exibido quando houver itens) -->
+            <div class="cart-content" id="cart-content">
+                <div class="cart-items">
+                    <!-- Exemplo de item no carrinho -->
+                    <div class="cart-item" data-id="1">
+                        <div class="cart-item-image">
+                            <img src="/Kayblakk-Bebidas/images/products/cerveja-exemplo.jpg" alt="Cerveja Premium">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-name">Cerveja Premium</h3>
+                            <p class="cart-item-category">Cervejas</p>
+                            <p class="cart-item-price">R$ 8,90</p>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <div class="quantity-btn decrease">-</div>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <div class="quantity-btn increase">+</div>
+                            </div>
+                            <div class="remove-item">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item" data-id="2">
+                        <div class="cart-item-image">
+                            <img src="/Kayblakk-Bebidas/images/products/whisky-exemplo.jpg" alt="Whisky 12 Anos">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-name">Whisky 12 Anos</h3>
+                            <p class="cart-item-category">Destilados</p>
+                            <p class="cart-item-price">R$ 129,90</p>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <div class="quantity-btn decrease">-</div>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <div class="quantity-btn increase">+</div>
+                            </div>
+                            <div class="remove-item">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item" data-id="3">
+                        <div class="cart-item-image">
+                            <img src="/Kayblakk-Bebidas/images/products/energetico-exemplo.jpg" alt="Energético Premium">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-name">Energético Premium</h3>
+                            <p class="cart-item-category">Não Alcoólicos</p>
+                            <p class="cart-item-price">R$ 9,90</p>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <div class="quantity-btn decrease">-</div>
+                                <input type="text" class="quantity-input" value="2" readonly>
+                                <div class="quantity-btn increase">+</div>
+                            </div>
+                            <div class="remove-item">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-actions">
+                        <a href="/Kayblakk-Bebidas/pages/categories.html" class="continue-shopping">
+                            <i class="fas fa-arrow-left"></i> Continuar Comprando
+                        </a>
+                        <div class="clear-cart" id="clear-cart">Limpar Carrinho</div>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <h2 class="summary-title">Resumo do Pedido</h2>
+                    
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span>R$ 158,60</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Taxa de Entrega</span>
+                        <span>R$ 10,00</span>
+                    </div>
+                    
+                    <div class="summary-total">
+                        <span>Total</span>
+                        <span>R$ 168,60</span>
+                    </div>
+                    
+                    <div class="checkout-form">
+                        <div class="form-group">
+                            <label for="client-name">Nome Completo</label>
+                            <input type="text" id="client-name" placeholder="Seu nome completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client-address">Endereço de Entrega</label>
+                            <input type="text" id="client-address" placeholder="Rua, número, bairro">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="client-phone">Telefone</label>
+                            <input type="tel" id="client-phone" placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="payment-method">Forma de Pagamento</label>
+                            <select id="payment-method">
+                                <option value="">Selecione uma opção</option>
+                                <option value="dinheiro">Dinheiro</option>
+                                <option value="cartao">Cartão de Crédito/Débito (na entrega)</option>
+                                <option value="pix">PIX</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="order-notes">Observações</label>
+                            <textarea id="order-notes" placeholder="Alguma observação sobre o pedido?"></textarea>
+                        </div>
+                        
+                        <button class="checkout-btn" id="checkout-btn">
+                            <i class="fab fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Distribuidora<span>Bebidas</span></h2>
+                    <p>Sua melhor opção em bebidas e tabacaria</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=destilados">Destilados</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/tabacaria.html">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/Kayblakk-Bebidas/js/main.js"></script>
+    <script src="/Kayblakk-Bebidas/js/cart.js"></script>
+    <script src="/Kayblakk-Bebidas/js/whatsapp-integration.js"></script>
+</body>
+</html>
+
