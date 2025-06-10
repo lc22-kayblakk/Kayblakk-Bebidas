@@ -387,7 +387,7 @@ function setupCartEvents() {
             const encodedMessage = encodeURIComponent(message);
             
             // Número de WhatsApp da loja (substitua pelo número real)
-            const whatsappNumber = '5500123456789';
+            const whatsappNumber = '5551985914224';
             
             // Abrir WhatsApp com a mensagem
             window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
