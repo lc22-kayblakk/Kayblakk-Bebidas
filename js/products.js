@@ -680,4 +680,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
