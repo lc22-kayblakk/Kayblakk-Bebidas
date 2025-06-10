@@ -194,4 +194,3 @@ function setAdultUser() {
 function redirectUnderage() {
     window.location.href = 'https://www.gov.br/anvisa/pt-br/assuntos/fiscalizacao-e-monitoramento/alcool';
 }
-
