@@ -121,11 +121,19 @@ body {
     align-items: center;
     font-weight: 700;
     font-size: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Aqui adiciona a imagem pequena da logo */
+.logo-img {
+    height: 40px; /* Tamanho da logo */
+    margin-right: 0.5rem; /* Espaço entre a imagem e o texto */
 }
 
 .logo span {
     color: var(--color-blue);
-    margin-left: 0.25rem;
+    margin-left: 0.25rem; /* Pode tirar se quiser só a logo e nome grudados */
 }
 
 .search-bar {
