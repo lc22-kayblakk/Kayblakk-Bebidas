@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/reset.css">
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-page {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .about-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .about-page p {
+            color: var(--color-gray-dark);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .about-section {
+            margin-bottom: 3rem;
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-blue-dark);
+        }
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .about-section ul li {
+            background-color: var(--color-gray-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            width: 250px;
+            text-align: left;
+            box-shadow: var(--shadow-sm);
+        }
+        .about-section ul li i {
+            font-size: 2rem;
+            color: var(--color-blue);
+            margin-bottom: 1rem;
+        }
+        .about-section ul li h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .about-section ul li p {
+            font-size: 0.9rem;
+            color: var(--color-gray-dark);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/Kayblakk-Bebidas/index.html">
+                    <img src="/Kayblakk-Bebidas/images/logo.png" alt="Logo Distribuidora Bebidas" class="logo-img">
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/about.html" class="active">Sobre Nós</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="/Kayblakk-Bebidas/pages/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="about-page">
+        <div class="container">
+            <h1>Sobre a Distribuidora de Bebidas</h1>
+            <p>Bem-vindo à Distribuidora de Bebidas, seu destino online para uma vasta seleção de bebidas e produtos de tabacaria. Nosso compromisso é oferecer conveniência, variedade e qualidade, tudo na palma da sua mão.</p>
+
+            <div class="about-section">
+                <h2>Nossa Missão</h2>
+                <p>Ser a principal escolha dos consumidores para a compra de bebidas e produtos relacionados, proporcionando uma experiência de compra fácil, rápida e segura, com entrega eficiente e atendimento excepcional.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Nossos Valores</h2>
+                <ul>
+                    <li>
+                        <i class="fas fa-handshake"></i>
+                        <h3>Confiança</h3>
+                        <p>Construímos relacionamentos duradouros baseados na transparência e integridade.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-wine-bottle"></i>
+                        <h3>Qualidade</h3>
+                        <p>Oferecemos apenas produtos de alta qualidade, garantindo a satisfação dos nossos clientes.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-truck"></i>
+                        <h3>Eficiência</h3>
+                        <p>Priorizamos a agilidade na entrega e a otimização de todos os processos.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-smile"></i>
+                        <h3>Satisfação do Cliente</h3>
+                        <p>Nosso foco é superar as expectativas, proporcionando uma experiência de compra agradável.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>Por Que Escolher a Distribuidora de Bebidas?</h2>
+                <p>Com anos de experiência no mercado, entendemos o que você precisa. Nossa plataforma intuitiva, a variedade de produtos e o serviço de entrega rápido fazem de nós a escolha ideal para suas necessidades de bebidas e tabacaria. Estamos sempre buscando inovar e melhorar para servir você cada vez melhor.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/Kayblakk-Bebidas/images/logo.png" alt="Logo Distribuidora Bebidas" class="logo-img">
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=destilados">Destilados</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/tabacaria.html">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kayblakkbebidas/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5551985914224" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/Kayblakk-Bebidas/js/main.js"></script>
+    <script src="/Kayblakk-Bebidas/js/cart.js"></script>
+</body>
+</html>
+

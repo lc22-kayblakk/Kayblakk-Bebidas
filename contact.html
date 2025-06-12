@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/reset.css">
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-page {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .contact-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .contact-page p {
+            color: var(--color-gray-dark);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .contact-info-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .contact-info-card i {
+            font-size: 2.5rem;
+            color: var(--color-blue);
+            margin-bottom: 1rem;
+        }
+        .contact-info-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-info-card p {
+            font-size: 0.9rem;
+            color: var(--color-gray-dark);
+            margin-bottom: 0;
+        }
+        .contact-form-section {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+        .contact-form-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-blue-dark);
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-gray);
+            border-radius: var(--border-radius-sm);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn-submit:hover {
+            background-color: var(--color-blue-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/Kayblakk-Bebidas/index.html">
+                    <img src="/Kayblakk-Bebidas/images/logo.png" alt="Logo Distribuidora Bebidas" class="logo-img">
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/contact.html" class="active">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="/Kayblakk-Bebidas/pages/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="contact-page">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Tem alguma dúvida, sugestão ou precisa de ajuda? Preencha o formulário abaixo ou utilize nossos canais de contato.</p>
+
+            <div class="contact-info-grid">
+                <div class="contact-info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Endereço</h3>
+                    <p>Rua Exemplo, 123 - Cidade, Estado, CEP</p>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefone</h3>
+                    <p>(00) 12345-6789</p>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>contato@distribuidorabebidas.com</p>
+                </div>
+                <div class="contact-info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Horário de Atendimento</h3>
+                    <p>Segunda a Sexta: 9h - 18h</p>
+                    <p>Sábado: 9h - 13h</p>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h2>Envie-nos uma Mensagem</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" placeholder="Seu nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" placeholder="Assunto da mensagem" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" placeholder="Sua mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/Kayblakk-Bebidas/images/logo.png" alt="Logo Distribuidora Bebidas" class="logo-img">
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=destilados">Destilados</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/tabacaria.html">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kayblakkbebidas/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5551985914224" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/Kayblakk-Bebidas/js/main.js"></script>
+    <script src="/Kayblakk-Bebidas/js/cart.js"></script>
+</body>
+</html>
+

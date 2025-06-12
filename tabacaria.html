@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabacaria - Distribuidora de Bebidas</title>
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/reset.css">
+    <link rel="stylesheet" href="/Kayblakk-Bebidas/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .tobacco-page {
+            padding: 4rem 0;
+        }
+        
+        .tobacco-header {
+            margin-bottom: 2rem;
+        }
+        
+        .tobacco-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .tobacco-header p {
+            color: var(--color-gray-dark);
+        }
+        
+        .tobacco-grid {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/Kayblakk-Bebidas/index.html">
+                    <img src="/Kayblakk-Bebidas/images/logo.png" alt="Logo Distribuidora Bebidas" class="logo-img">
+                </a>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar produtos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="main-nav">
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                    <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart">
+                <a href="/Kayblakk-Bebidas/pages/cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="tobacco-page">
+        <div class="container">
+            <div class="tobacco-header">
+                <h1>Tabacaria</h1>
+                <p>Confira nossa seleção de produtos de tabacaria, incluindo cigarros, cigarrilhas e acessórios.</p>
+            </div>
+            
+            <div class="tobacco-grid products-grid" id="tobacco-products-container">
+                <!-- Produtos de tabacaria serão carregados dinamicamente via JavaScript -->
+                <!-- Exemplo de estrutura de produto -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/Kayblakk-Bebidas/images/products/cigarro-exemplo.jpg" alt="Cigarro Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cigarro Marca X</h3>
+                        <p class="product-category">Cigarros</p>
+                        <p class="product-price">R$ 10,00</p>
+                        <button class="btn btn-add-cart" data-id="9">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/Kayblakk-Bebidas/images/products/cigarrilha-exemplo.jpg" alt="Cigarrilha Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cigarrilha Sabor Y</h3>
+                        <p class="product-category">Cigarrilhas</p>
+                        <p class="product-price">R$ 15,00</p>
+                        <button class="btn btn-add-cart" data-id="10">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/Kayblakk-Bebidas/images/products/isqueiro-exemplo.jpg" alt="Isqueiro Exemplo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Isqueiro Zippo</h3>
+                        <p class="product-category">Acessórios</p>
+                        <p class="product-price">R$ 50,00</p>
+                        <button class="btn btn-add-cart" data-id="11">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/Kayblakk-Bebidas/images/logo.png" alt="Logo Distribuidora Bebidas" class="logo-img">
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/index.html">Início</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/categories.html">Categorias</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/promotions.html">Promoções</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/about.html">Sobre Nós</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-categories">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=cervejas">Cervejas</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=destilados">Destilados</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=vinhos">Vinhos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/products.html?category=nao-alcoolicos">Não Alcoólicos</a></li>
+                        <li><a href="/Kayblakk-Bebidas/pages/tabacaria.html">Tabacaria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
+                    <p><i class="fas fa-phone"></i> (00) 12345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@distribuidorabebidas.com</p>
+                    <div class="social-media">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/kayblakkbebidas/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5551985914224" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Distribuidora de Bebidas. Todos os direitos reservados.</p>
+                <p>Proibida a venda de bebidas alcoólicas para menores de 18 anos.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/Kayblakk-Bebidas/js/main.js"></script>
+    <script src="/Kayblakk-Bebidas/js/cart.js"></script>
+</body>
+</html>
+
